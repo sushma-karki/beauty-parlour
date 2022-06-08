@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+{%block body%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+    body:before{
+        content: '';
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-image: url(../static/img/make-up.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .updatepage{
+        position: absolute;
+        top: 18%;
+        width: 45%;
+        height: 140vh;
+        left: 50%;
+        background:rgba(0,0,0,0.7);
+    }
+
+</style>
+<div class="updatepage shadow-lg">
+    <form method="POST" >
+        {%csrf_token%}
+        <table class="table text-center text-white"  border="1" cellspacing="10">
+            {{form.as_table}}
+            <tr>
+                <td><input type="submit" value="Submit"></td>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+{%endblock%}

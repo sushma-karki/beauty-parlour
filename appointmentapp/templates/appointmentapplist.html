@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{%block body%}
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+    #txtarea{
+        top: 18%;
+        right: 1%;
+        position: absolute;
+    }
+</style>
+
+<div> 
+    <form method="POST">
+        {%csrf_token%} 
+       <h1 style="color: red;">APPOINTMENT LIST</h1>
+       <br>
+       
+    </form>
+</div>
+
+<table class="table" border="1" cellspacing="10">
+    <tr>
+        <th>Id</th>
+        <th>Appointment_number</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Appointment-Date</th>
+        <th>Appointment-Time</th>
+        <th colspan='2'>Action</th>
+   
+    </tr>
+    {%for i in appoint%}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.appointment_number}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.appointment_date}}</td>
+            <td>{{i.appointment_time}}</td>
+            <td><a href="{%url 'appointmentapp:deleteappointment' i.id%}">Delete</a></td>
+            <td><a href="{%url 'appointmentapp:editappointment' i.id%}">Edit</a></td>
+        </tr>
+    {%endfor%}
+
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{%endblock%}
+
+</div>
+
+<style>  a{
+    text-decoration: none;
+}
+</style>
